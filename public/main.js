@@ -1,35 +1,49 @@
 //client side javascript
 
+var updateButton = document.getElementById('update');
 
-var update = document.getElementById('update')
+var trash = document.getElementsByClassName("fa-trash");
+var edit = document.getElementsByClassName("fa-edit");
 
-// update.addEventListener('click', function(){
-//   fetch('inGameCodes', {
-//     method: 'put',
-//     headers: {'Content-type': 'application/json'},
-//     body: JSON.stringify({
-//         name: name,
-//         friendcode: friendcode
-//     })
-//   })
-// })
 
-var del = document.getElementById('delete')
-
-del.addEventListener('click', function (){
-  fetch('quotes', {
-    method: 'delete',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      'name': 'Darth Vader'
+Array.from(edit).forEach(function(element) {
+  element.addEventListener('click', function(){
+    const name = this.parentNode.parentNode.childNodes[1].innerText
+    const friendcode = this.parentNode.parentNode.childNodes[3].innerText
+    fetch('inGameCodes', {
+      method: 'put',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify({
+        "name": name,
+        "friendcode": "***************"
+      })
+    })
+    .then(res => {
+      if (res.ok) return res.json()
+    })
+    .then(data =>{
+      console.log(data)
+      window.location.reload(true)
+      })
     })
   })
-  .then(res => {
-    if (res.ok) return res.json()
-  }).then(data =>{
-    console.log(data)
-    window.location.reload()
+
+Array.from(trash).forEach(function(element) {
+  element.addEventListener('click', function(){
+    const name = this.parentNode.parentNode.childNodes[1].innerText
+    const friendcode = this.parentNode.parentNode.childNodes[3].innerText
+    fetch('deleted', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'name': name,
+        'friendcode': friendcode
+      })
+    }).then(data =>{
+      console.log(data)
+      window.location.reload()
+    })
   })
 })

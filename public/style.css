@@ -1,0 +1,49 @@
+body{
+  background-color: darkSlateGray;
+  color:white;
+}
+
+html{
+  color: white;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+h1{
+  margin-left: 3%;
+}
+
+h3{
+  margin-left: 3%;
+}
+
+ul{
+  margin-left: 3%;
+}
+
+h2{
+  margin-left: 3%;
+}
+
+input{
+  margin-left: 3%;
+}
+
+#delete{
+  margin-left: 3%;
+}

@@ -1,20 +1,30 @@
 {
   "name": "mongdb-reading",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "mongodb": "^3.3.0-beta2"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RogerDavidCruz/personal-express-complete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RogerDavidCruz/personal-express-complete/issues"
+  },
+  "homepage": "https://github.com/RogerDavidCruz/personal-express-complete#readme",
+  "description": ""
 }
